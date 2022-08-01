@@ -7,6 +7,7 @@ function Cart() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.cart);
   const handleRemove = (productId) => {
+    
       dispatch(remove(productId));
   };
   
@@ -19,9 +20,9 @@ function Cart() {
 
 
                     <div key={product.id} className="cartCard">
-                        <img src={product.image} alt="" />
-                        <h5>{product.title}</h5>
-                        <h5>{product.price}</h5>
+                        <img className='centerSelected' src={product.image} alt="" />
+                        <h6 className='fontBold'>{product.title}</h6>
+                        <h5>{"$"+ product.price}</h5>
                         <button
                             className="btn"
                             onClick={() => handleRemove(product.id)}

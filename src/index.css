@@ -6,11 +6,34 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   background: whitesmoke;
 }
 img {
-  height: 80px;
+
+  justify-content: center;
+  margin-bottom: 10px;
 }
+
+.center{
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 40%;
+
+}
+
+.centerSelected{
+ 
+  height: 80px;
+  width: 60px;
+
+}
+
+
 .card {
   background: white;
   padding: 20px;
@@ -60,4 +83,8 @@ img {
   margin-bottom: 20px;
   padding: 14px;
   border-radius: 5px;
+}
+
+.fontBold{
+  font-weight: bold;
 }

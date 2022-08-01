@@ -6,6 +6,7 @@ import Cart from './pages/Cart';
 import store from './store/store';
 import Navbar from './components/Navbar';
 import { Provider } from 'react-redux';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
   return (
@@ -28,9 +29,7 @@ function App() {
   <Route
       path="*"
       element={
-        <main style={{ padding: "1rem" }}>
-          <p>There's nothing here!</p>
-        </main>
+        <PageNotFound/>
       }
     />
 

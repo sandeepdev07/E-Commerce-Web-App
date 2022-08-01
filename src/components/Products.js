@@ -39,6 +39,7 @@ const Products = () => {
 
       // store product in redux store
 
+
       dispatch(add(product));
     }
 
@@ -61,15 +62,15 @@ const Products = () => {
 
           <div className='card' key={product.id}>
 
-            <img src={product.image} alt=""/>
+            <img className='center' src={product.image} alt=""/>
 
-            <h4>{product.title}</h4>
+            <h6>{product.title}</h6>
 
-            <h5>{product.price}</h5>
+            <h5>{"$"+ product.price}</h5>
 
             <button onClick={() => handleAdd(product)} className="btn">Add to cart</button>
 
-            <button onClick={<ConfirmationModel/>}>Show Model</button>
+
 
 
           </div>
