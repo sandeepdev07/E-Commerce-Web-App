@@ -23,15 +23,15 @@ function Cart() {
 
 
  if (products.length===0) {
-    return <container>
-         
-<div  class="card list  center">
-<img className="center" src={ic_items}   alt="no items"/>
-    <div class="card-body">
-     <h5 className='bold'>No products added on card </h5>
-    </div>
-  </div>
-    </container> 
+    return <div>     
+   <div  class="card list  center">
+  <img className="center" src={ic_items}   alt="no items"/>
+  <div class="card-body">
+  <h5 className='bold'>No products added on card </h5>
+</div>
+</div>
+</div>  
+   
 
  }
 

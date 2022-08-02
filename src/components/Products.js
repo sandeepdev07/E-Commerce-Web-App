@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../store/cartSlice';
 import { fetchProducts } from '../store/productSlice';
 import { STATUSES } from '../store/productSlice';
 import ConfirmationModel from './ConfirmationModel';
+import {Loader} from './Loader';
+import {Button} from 'react-bootstrap'
 
 
 
@@ -12,6 +15,9 @@ const Products = () => {
     const dispatch = useDispatch();
 
     const {data: products,status} = useSelector((state)=> state.product);
+    const [showModal,setShowModal] = useState(false)
+
+
 
   //  const[products,setProducts] = useState([]); 
 
@@ -35,23 +41,21 @@ const Products = () => {
 
     },[]);
 
+
+
     const handleAdd = (product)=>{
 
       // store product in redux store
 
-
       dispatch(add(product));
 
-      console.log("@@@addProduct",product)
     }
 
     
 
-  
-
     if (status === STATUSES.LOADING) {
       
-      return <h2>Loading....</h2>;
+      return <Loader/>;
     }
 
     if (status === STATUSES.ERROR) {
@@ -73,14 +77,39 @@ const Products = () => {
             <h5>{"$"+ product.price}</h5>
 
             <button onClick={() => handleAdd(product)} className="btn">Add to cart</button>
-
-
-
+            <button onClick={() => setShowModal(true)} className="btn">Scsc</button>
 
           </div>
         ))
       }
 
+      <Modal
+        show={showModal}
+        
+      >
+        <Modal.Header>
+         <h5>Confirmation</h5> 
+        </Modal.Header>
+        <Modal.Body>
+          <h6>Do you want to product in the card?</h6>
+        </Modal.Body>
+        <Modal.Footer>
+          {/* <Button color='primary' onClick={()=>{
+            setShoeModal(false)
+          }}>Close</Button> */}
+
+         <Button onClick={()=>{
+            setShowModal(false)
+          }}>No</Button>
+
+
+         <Button>
+            Yes
+          </Button>
+
+         
+        </Modal.Footer>
+      </Modal>
     </div>
   )
 }
