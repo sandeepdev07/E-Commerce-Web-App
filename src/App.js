@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import { Provider } from 'react-redux';
 import PageNotFound from './pages/PageNotFound';
 
+
 function App() {
   return (
     <div className="App">

@@ -1,29 +1,15 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import ic_notfound from "../images/ic_notfound.svg";
 
 
-const ConfirmationModel = () => {
-  return (
-
-      <div className="modal" tabindex="-1">
-  <div className="modal-dialog">
-    <div className="modal-content">
-      <div className="modal-header">
-        <h5 className="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+function ConfirmationModel() {
+    return (
+      <div>
+      
+        <img className="center" src={ic_notfound}   alt="not found"/>
+                     
       </div>
-      <div className="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-   
-  )
-}
-
-export default ConfirmationModel
+    )
+  }
+  
+  export default ConfirmationModel

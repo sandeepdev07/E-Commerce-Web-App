@@ -41,7 +41,11 @@ const Products = () => {
 
 
       dispatch(add(product));
+
+      console.log("@@@addProduct",product)
     }
+
+    
 
   
 
