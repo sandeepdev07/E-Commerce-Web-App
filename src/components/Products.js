@@ -15,7 +15,10 @@ const Products = () => {
     const dispatch = useDispatch();
 
     const {data: products,status} = useSelector((state)=> state.product);
-    const [showModal,setShowModal] = useState(false)
+    const [showModal,setShowModal] = useState({
+      show:false,
+      data:undefined,
+    })
 
 
 
@@ -47,6 +50,7 @@ const Products = () => {
 
       // store product in redux store
 
+      setShowModal(false);
       dispatch(add(product));
 
     }
@@ -76,12 +80,16 @@ const Products = () => {
 
             <h5>{"$"+ product.price}</h5>
 
-            <button onClick={() => handleAdd(product)} className="btn">Add to cart</button>
-            <button onClick={() => setShowModal(true)} className="btn">Scsc</button>
+            {/* <button onClick={() => handleAdd(product)} className="btn">Add to cart</button> */}
+            <button onClick={() => setShowModal({
+              show:true,
+              data:product
+            })} className="btn">Scsc</button>
 
           </div>
         ))
       }
+
 
       <Modal
         show={showModal}
@@ -102,14 +110,19 @@ const Products = () => {
             setShowModal(false)
           }}>No</Button>
 
-
-         <Button>
+          
+         <Button onClick={() => handleAdd(showModal.data)} >
             Yes
           </Button>
 
          
         </Modal.Footer>
       </Modal>
+
+    
+   
+
+     
     </div>
   )
 }
