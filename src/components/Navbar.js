@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import VariationsExample from './VariationsExample';
+import Badge from 'react-bootstrap/Badge';
 
 const Navbar = () => {
 
@@ -19,9 +21,12 @@ const Navbar = () => {
         <Link className='navLink' to='/'>Home</Link>
         <Link className='navLink' to='/cart'>Cart</Link>
    
+   <span className='cartCount'><Badge pill bg="success">Cart Items : {items.length}
+       
+      </Badge>{' '}</span>
 
 
-        <span className='cartCount'>Cart items: {items.length}</span>
+        {/* <span className='cartCount'> <Badge bg="success">Cart Items : {items.length}</Badge>{' '}</span> */}
       </div>
     </div>
   )

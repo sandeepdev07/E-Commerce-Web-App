@@ -1,7 +1,6 @@
-import { toBeEmpty } from '@testing-library/jest-dom/dist/matchers';
+
 import React, {useState} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
-import ConfirmationModel from '../components/ConfirmationModel';
 import {remove} from '../store/cartSlice'
 import ic_items from "../images/ic_items.svg";
 import { Modal } from 'react-bootstrap';
@@ -45,7 +44,7 @@ function Cart() {
 
   return (
     <div>
-            <h3>Cart</h3>
+            <h5 className='center bottom '>{products.length} item are added in your card</h5>
             <div className="cartWrapper">
                 {products.map((product) => (
 
@@ -70,7 +69,7 @@ function Cart() {
 
 
 <Modal
-        show={showModal}
+        show={showModal.show}
         
       >
         <Modal.Header>

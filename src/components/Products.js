@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../store/cartSlice';
 import { fetchProducts } from '../store/productSlice';
 import { STATUSES } from '../store/productSlice';
-import ConfirmationModel from './ConfirmationModel';
 import {Loader} from './Loader';
 import {Button} from 'react-bootstrap'
 
@@ -78,13 +77,13 @@ const Products = () => {
 
             <h6>{product.title}</h6>
 
-            <h5>{"$"+ product.price}</h5>
+            <h5>{"₹ " + product.price}</h5>
 
             {/* <button onClick={() => handleAdd(product)} className="btn">Add to cart</button> */}
             <button onClick={() => setShowModal({
               show:true,
               data:product
-            })} className="btn">Scsc</button>
+            })} className="btn">Add to cart</button>
 
           </div>
         ))
@@ -92,7 +91,7 @@ const Products = () => {
 
 
       <Modal
-        show={showModal}
+        show={showModal.show}
         
       >
         <Modal.Header>
